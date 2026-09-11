@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #34205f 0%,
+            #17152f 35%,
+            #080b1c 75%
+        );
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================
+   LUCES DEL FONDO
+   ========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: 10%;
+    left: -180px;
+
+    background: rgba(180, 100, 255, 0.16);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -150px;
+    right: -150px;
+
+    background: rgba(255, 100, 210, 0.12);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   CORAZONES
+   ========================= */
+
+.corazones {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.corazones span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.35;
+
+    color: #f49bff;
+
+    animation: flotar 10s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(244, 155, 255, 0.8);
+}
+
+.corazones span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.corazones span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.corazones span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.corazones span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.corazones span:nth-child(5) {
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.corazones span:nth-child(6) {
+    left: 85%;
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+header {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 80px 20px 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #34205f,
+            #6d3b91,
+            #b65cff
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 117, 195, 0.16);
+
+    top: -280px;
+    left: -100px;
+
+    filter: blur(10px);
+}
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(244, 155, 255, 0.14);
+
+    bottom: -250px;
+    right: -100px;
+
+    filter: blur(10px);
+}
+
+.encabezado-contenido {
+    position: relative;
+
+    z-index: 2;
+}
+
+.pequeno {
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.9;
+
+    color: #f4eaff;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 25px rgba(244,155,255,0.55);
+}
+
+.linea {
+    width: 100px;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff75c3,
+            white,
+            #b65cff
+        );
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px rgba(255,117,195,0.7);
+}
+
+header p {
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    color: #f9efff;
+}
+
+
+/* =========================
+   CONTENIDO
+   ========================= */
+
+.contenido {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    margin: 70px auto;
+
+    padding: 20px;
+}
+
+.introduccion {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.introduccion h2 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: #f49bff;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 15px rgba(244,155,255,0.35);
+}
+
+.introduccion p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+    color: #eadff4;
+}
+
+
+/* =========================
+   LINEA DEL TIEMPO
+   ========================= */
+
+.timeline {
+    position: relative;
+
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff75c3,
+            #b65cff,
+            #ff75c3
+        );
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 12px rgba(182,92,255,0.6);
+}
+
+
+/* =========================
+   MOMENTOS
+   ========================= */
+
+.momento {
+    position: relative;
+
+    width: 50%;
+
+    padding: 20px 40px;
+
+    margin-bottom: 40px;
+}
+
+.momento:nth-child(odd) {
+    left: 0;
+
+    text-align: right;
+}
+
+.momento:nth-child(even) {
+    left: 50%;
+
+    text-align: left;
+}
+
+.punto {
+    position: absolute;
+
+    top: 35px;
+
+    width: 22px;
+    height: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff75c3,
+            #b65cff
+        );
+
+    border: 5px solid #17152f;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 3px #f49bff,
+        0 0 18px rgba(255,117,195,0.7);
+
+    z-index: 3;
+}
+
+.momento:nth-child(odd) .punto {
+    right: -11px;
+}
+
+.momento:nth-child(even) .punto {
+    left: -11px;
+}
+
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+.tarjeta {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(52, 32, 95, 0.92),
+            rgba(23, 21, 47, 0.96)
+        );
+
+    border: 1px solid rgba(244,155,255,0.20);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.40),
+        0 0 20px rgba(182,92,255,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(244,155,255,0.45);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.50),
+        0 0 30px rgba(182,92,255,0.20);
+}
+
+.fecha {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,117,195,0.14);
+
+    border: 1px solid
+        rgba(255,117,195,0.25);
+
+    color: #ff9ed5;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.tarjeta h2 {
+    color: #f49bff;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px rgba(244,155,255,0.25);
+}
+
+.tarjeta p {
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    color: #eadff4;
+}
+
+
+/* =========================
+   MENSAJE FINAL
+   ========================= */
+
+.mensaje-final {
+    margin-top: 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #34205f,
+            #6d3b91,
+            #b65cff
+        );
+
+    color: white;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border: 1px solid
+        rgba(244,155,255,0.30);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.45),
+        0 0 30px rgba(182,92,255,0.15);
+}
+
+.mensaje-final h2 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.3);
+}
+
+.mensaje-final p {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    white-space: pre-wrap;
+
+    text-align: left;
+
+    padding: 10px 20px;
+
+    color: #f8efff;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+.botones {
+    text-align: center;
+
+    margin: 55px 0 70px;
+}
+
+.boton {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    margin: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff75c3,
+            #b65cff
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    border: 1px solid
+        rgba(255,255,255,0.30);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.30),
+        0 0 15px rgba(255,117,195,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.40),
+        0 0 25px rgba(255,117,195,0.50);
+}
+
+
+/* =========================
+   ANIMACIÓN
+   ========================= */
+
+@keyframes flotar {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   CELULARES
+   ========================= */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .momento,
+    .momento:nth-child(even),
+    .momento:nth-child(odd) {
+        width: 100%;
+
+        left: 0;
+
+        text-align: left;
+
+        padding-left: 60px;
+
+        padding-right: 10px;
+    }
+
+    .momento:nth-child(odd) .punto,
+    .momento:nth-child(even) .punto {
+        left: 9px;
+
+        right: auto;
+    }
+
+    .mensaje-final p {
+        font-size: 17px;
+        padding: 5px;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- CORAZONES -->
+
+    <div class="corazones">
+
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+
+    </div>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="encabezado-contenido">
+
+            <div class="pequeno">
+                UNA HISTORIA PARA RECORDAR
+            </div>
+
+            <h1>
+                ❤️ Nuestra Historia ❤️
+            </h1>
+
+            <div class="linea"></div>
+
+            <p>
+                Algunos momentos que hicieron especial nuestra historia
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main class="contenido">
+
+
+        <!-- INTRODUCCIÓN -->
+
+        <section class="introduccion">
+
+            <h2>
+                🌸 Todo comenzó con un momento
+            </h2>
+
+            <p>
+                Cada historia tiene un comienzo,
+                y la nuestra está formada por pequeños
+                momentos que poco a poco se convirtieron
+                en recuerdos importantes.
+            </p>
+
+        </section>
+
+
+        <!-- LINEA DEL TIEMPO -->
+
+        <section class="timeline">
+
+
+            <!-- MOMENTO 1 -->
+
+            <div class="momento">
+
+                <div class="punto"></div>
+
+                <div class="tarjeta">
+
+                    <span class="fecha">
+                        🌸 El comienzo
+                    </span>
+
+                    <h2>
+                        El dia que nos hicimos novios
+                    </h2>
+
+                    <p>
+                        Todo comenzo un 15 de junio del 2024,
+                        en el parque de Miraflores donde pedí
+                        a la mujer de la cual yo me estaba 
+                        enamorando inmensamente si podia ser
+                        su novio.
+                       
+                        
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 2 -->
+
+            <div class="momento">
+
+                <div class="punto"></div>
+
+                <div class="tarjeta">
+
+                    <span class="fecha">
+                        💕 Un momento especial
+                    </span>
+
+                    <h2>
+                        Nuestro primer recuerdo
+                    </h2>
+
+                    <p>
+                        El primer recurdo que tengo es
+                        el primer beso que nos dimos, fue
+                        en las gradas del gimnasio, aunque
+                        usted recuerda que fue en el salon
+                        de computación, pero insisto que 
+                        nuestro primer besito muy chabocho
+                        fue en las gradas del gimnasio.
+                        
+                        
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 3 -->
+
+            <div class="momento">
+
+                <div class="punto"></div>
+
+                <div class="tarjeta">
+
+                    <span class="fecha">
+                        ✨ Muchos momentos
+                    </span>
+
+                    <h2>
+                        Momentos que nunca olvidaremos
+                    </h2>
+
+                    <p>
+                        Con el tiempo llegaron muchos momentos,
+                        risas, conversaciones, fotografías y
+                        experiencias que hicieron crecer nuestra historia, 
+                        cumplimos nuestro primer mes, nuetros primeros 6 meses,
+                        NUESTRO MARAVILLOSO PRIMER AÑITO, y con el maravillosos
+                        recuerdos, asi otros 365 dias y llego nuesto aniversario
+                        de 2 AÑOS.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTO 4 -->
+
+            <div class="momento">
+
+                <div class="punto"></div>
+
+                <div class="tarjeta">
+
+                    <span class="fecha">
+                        ❤️ El final de nuestra historia
+                    </span>
+
+                    <h2>
+                        Lo que queda en la memoria
+                    </h2>
+
+                    <p>
+                        Lastimosamente mi caracter no fue el mejor,
+                        le cause mucho daño sentimental con mi mal
+                        caracter, no logre cumplir con sus espectativas
+                        de un buen hombre, y un lastimoso 2 de julio de 
+                        2026, por mi culpa nuestra relación termino, yo 
+                        con mis tonteras cause la ruptura de la relacion 
+                        y la perdida de la mujer que amaba y amo con mi
+                        vida... 
+                      
+                        
+                        
+                        
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- MENSAJE FINAL -->
+
+        <section class="mensaje-final">
+
+            <h2>
+                ❤️ Gracias por todo mi princesa hermosa
+            </h2>
+
+            <p>
+                Quiero aprovechar este pequeño espacio para decirle todo lo que 
+                siento, y es que en verdad estoy arrepentido por todo el daño 
+                que le cause, no fui un mal hombre, fui un hombre con un mal 
+                caracter, se que le hice daño a su corazoncito que lo unico que 
+                hizo fue amarme y darme todo su cariño, le hice daño a una niña 
+                que me amaba de la forma mas sincera posible y me arrepiento 
+                inmensamente de eso, si pudiera cambiar el pasado lo haria, pero
+                no existe una maquinita del tiempo para regresar y cambiarlo, si
+                pudiera dar lo que tengo por cambiar esos malos momentos que la
+                hice pasar lo haria pero no puedo.
+                
+                lo que si puedo hacer es cambiar mi presente, mi futuro y convertirme
+                en un hombre con un carcacter distinto, un caracter mejor y bueno,
+                posiblemente ya no podra verlo porque usted esta cerrada a regresar
+                conmigo y lo entiendo, no lo acepto pero lo entiendo,entiendo que 
+                tiene miedo de volver a vivir la misma historia, miedo a que le 
+                vuelva a hacer daño como lo he hecho, pero creame que lo entendí, 
+                tarde pero lo entendí, no sabe cuanto me odio por el daño que le 
+                cause.
+                
+                Yo la amo con mi alma niña, estoy cambiando, estoy mejorando, 
+                con la esperanza y la fé de que en algun momento usted y yo 
+                podamos regresar a tener esa relación tan linda que teniamos, 
+                porque si, no todo era malo, teniamos momentos increibles, momentos
+                maravillosos, momentos inolvidables, nuestras risas, nuestros 
+                abrazos, nuestros besos, nuestras caricias, los momentos que USTED
+                Y YO SABEMOS, cuando visitabamos lugares nuevos, haciamos nuevos
+                planes, nuevas experiencias y vivencias nuevas, aunque yo tenia
+                más experiencia en las relaciones creame que usted me enseño muchas
+                cosas nuevas, aprendí  mucho de usted y le agradezco por eso.
+                
+                Aquí estare esperando con mi corazón en las manos, por si algún día
+                me quiere dar otra oportunidad, no sere el mismo, ya no y se que 
+                es dificil confiar y creer, pero creame que despues de vivir lo que 
+                estoy viviendo y pasando, aprendí, quizá lo hice tarde y lastimosamente
+                aprendí a las malas pero aprendí, le pido a Dios que el pueda hacer
+                que usted me de otra oportunidad de hacerla la mujer más  feliz del
+                mundo, darle todo mi amor y mi cariño como siempre lo hice, pero 
+                esta vez hacerlo que se vea más, porque creame que mi amor para 
+                usted es inmenso, pero no lo demuestro de la misma forma en la 
+                que usted lo hace, pero creame que esta allí.
+                
+                la amo con mi vida, con mi alma, con mi corazón...
+                la amo cincuenta mil quinientos...
+                la amo tres millones...
+                la amo como la cola del chucho...
+                la amo al infinito y más allá...
+                la amo de aqui al sol, del sol para acá, pero a pasitos de tortuga...
+                la amo mi princesa...
+                la amo mi niña...
+                la amo mi bebe...
+                LA AMO MI AMOR LINDA...
+                
+                CREAME NO ME ALCANZAN LAS PALABRAS PARA DEMOSTRARLE Y DECIRLE 
+                LO MUCHO QUE ME ARREPIENTO DE LO MALO, PERO LE AGRADEZCO LO 
+                BUENO, SIEMPRE ESTARE PARA USTED HASTA QUE USTED QUIERA, SIEMPRE
+                LE PEDIRE A DIOSITO POR USTED, QUE LA CUIDE, QUE LA GUARDE DE TODO 
+                LO MALO Y QUE SIEMPRE LA GUIE POR EL BUEN CAMINO, NO ME VOY POR 
+                COMPLETO SIEMPRE LA CUIDARE AUNQUESEA DE LEJITOS PERO LO HARE, 
+                SU NIÑO ESTARA PARA USTED
+                
+                ESPERO QUE NUESTRA HISTORIA SE VUELVA A ESCRIBIR PERO ESTA VEZ CON  
+                SOLO COSAS BUENAS, QUE SEA UNA HISTORIA QUE LE PODAMOS CONTAR A 
+                NUESTROS HIJOS, EL COMO VOLVIVOS A ESTAR JUNTOS Y QUE SALIMOS 
+                ADELANTE JUNTOS, DE NUEVO PERO DE LA MANO DE DIOS... ESPERO 
+                ENSERIO VOLVER A ESTAR JUNTOS Y PODER DARLE MI AMOR, MI CARIÑO Y
+                MUCHOTES BESOS,ESPERO VOLVER A SENTIR SUS CARIACIAS Y ABRAZOS.
+                
+                LA AMO INFINITAMENTE ALLISON FERNANDA BARRIENTOS GONZALES "MI 
+                AMOR"
+             
+                
+                Algunas historias terminan,
+                pero eso no significa que todos sus recuerdos
+                desaparezcan.
+                Hay momentos que simplemente merecen
+                ser guardados para siempre.
+            </p>
+
+        </section>
+
+
+        <!-- BOTONES -->
+
+        <div class="botones">
+
+            <a
+                href="galeria.html"
+                class="boton">
+
+                📸 Ver nuestros recuerdos
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="boton">
+
+                ← Volver al inicio
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+</body>
+
+</html>

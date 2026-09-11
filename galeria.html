@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestros Recuerdos ❤️</title>
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #34205f 0%,
+            #17152f 40%,
+            #080b1c 85%
+        );
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================
+   LUCES DEL FONDO
+   ========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -150px;
+    left: -150px;
+
+    background:
+        rgba(182,92,255,0.15);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -150px;
+    right: -150px;
+
+    background:
+        rgba(255,117,195,0.12);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   CORAZONES FLOTANDO
+   ========================= */
+
+.corazones {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.corazones span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.30;
+
+    color: #f49bff;
+
+    animation:
+        flotar 10s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(244,155,255,0.8);
+}
+
+.corazones span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.corazones span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.corazones span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.corazones span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.corazones span:nth-child(5) {
+    left: 70%;
+    animation-delay: 5s;
+}
+
+.corazones span:nth-child(6) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.corazones span:nth-child(7) {
+    left: 90%;
+    animation-delay: 6s;
+}
+
+.corazones span:nth-child(8) {
+    left: 15%;
+    animation-delay: 7s;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+header {
+    min-height: 420px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            135deg,
+            #34205f,
+            #6d3b91,
+            #b65cff
+        );
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,0.45);
+}
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background:
+        rgba(255,117,195,0.14);
+
+    border-radius: 50%;
+
+    top: -250px;
+    left: -150px;
+
+    filter: blur(10px);
+}
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background:
+        rgba(244,155,255,0.14);
+
+    border-radius: 50%;
+
+    bottom: -220px;
+    right: -100px;
+
+    filter: blur(10px);
+}
+
+.contenido-header {
+    position: relative;
+
+    z-index: 2;
+}
+
+.pequeno {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: #f4eaff;
+
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 25px rgba(244,155,255,0.55);
+
+    margin-bottom: 20px;
+}
+
+.linea {
+    width: 100px;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff75c3,
+            white,
+            #b65cff
+        );
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px rgba(255,117,195,0.7);
+}
+
+.subtitulo {
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    color: #fff;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   GALERÍA
+   ========================= */
+
+.galeria {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    margin: 65px auto;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.foto {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(52,32,95,0.95),
+            rgba(23,21,47,0.98)
+        );
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+    border: 1px solid
+        rgba(244,155,255,0.18);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.40);
+
+    opacity: 0;
+
+    animation:
+        aparecer 0.7s forwards;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.foto:hover {
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    border-color:
+        rgba(244,155,255,0.45);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.50),
+        0 0 25px rgba(182,92,255,0.20);
+}
+
+.foto img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.foto:hover img {
+    transform:
+        scale(1.03);
+}
+
+.foto p {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    color: #f49bff;
+
+    padding: 15px 5px 8px;
+
+    text-shadow:
+        0 0 8px rgba(244,155,255,0.20);
+}
+
+
+/* =========================
+   BOTÓN VOLVER
+   ========================= */
+
+.volver {
+    text-align: center;
+
+    margin: 20px 0 70px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.boton {
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff75c3,
+            #b65cff
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.30);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.30),
+        0 0 15px rgba(255,117,195,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.40),
+        0 0 25px rgba(255,117,195,0.50);
+}
+
+
+/* =========================
+   VISOR DE FOTOS
+   ========================= */
+
+.visor {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(8, 5, 20, 0.96);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease;
+
+    z-index: 1000;
+}
+
+.visor.activo {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.visor-contenido {
+    text-align: center;
+
+    max-width: 90%;
+}
+
+.visor-contenido img {
+    max-width: 85vw;
+
+    max-height: 78vh;
+
+    border-radius: 12px;
+
+    border:
+        2px solid rgba(244,155,255,0.30);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.7),
+        0 0 30px rgba(182,92,255,0.20);
+}
+
+.visor-contenido p {
+    color: #f4eaff;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   BOTONES DEL VISOR
+   ========================= */
+
+.cerrar,
+.anterior,
+.siguiente {
+    position: absolute;
+
+    border: none;
+
+    background:
+        rgba(182,92,255,0.20);
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    border:
+        1px solid rgba(244,155,255,0.25);
+}
+
+.cerrar:hover,
+.anterior:hover,
+.siguiente:hover {
+    background:
+        rgba(255,117,195,0.35);
+
+    transform:
+        scale(1.1);
+
+    box-shadow:
+        0 0 20px rgba(255,117,195,0.35);
+}
+
+.cerrar {
+    top: 25px;
+
+    right: 30px;
+
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 35px;
+
+    z-index: 10;
+}
+
+.anterior,
+.siguiente {
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 55px;
+
+    height: 55px;
+
+    font-size: 25px;
+}
+
+.anterior:hover,
+.siguiente:hover {
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+.anterior {
+    left: 25px;
+}
+
+.siguiente {
+    right: 25px;
+}
+
+
+/* =========================
+   ANIMACIONES
+   ========================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 850px) {
+
+    .galeria {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        min-height: 350px;
+    }
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .foto img {
+        height: 350px;
+    }
+
+    .anterior {
+        left: 10px;
+    }
+
+    .siguiente {
+        right: 10px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- CORAZONES -->
+
+    <div class="corazones">
+
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+
+    </div>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="contenido-header">
+
+            <div class="pequeno">
+                PARA ALGUIEN MUY ESPECIAL
+            </div>
+
+            <h1>
+                ❤️ Nuestros Recuerdos ❤️
+            </h1>
+
+            <div class="linea"></div>
+
+            <p class="subtitulo">
+                Algunos momentos que queremos guardar para siempre ❤️
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- GALERÍA -->
+
+    <section
+        class="galeria"
+        id="galeria-fotos">
+    </section>
+
+
+    <!-- BOTÓN VOLVER -->
+
+    <div class="volver">
+
+    <a
+        href="historia.html"
+        class="boton">
+        ← Volver a nuestra historia
+    </a>
+
+    <a
+        href="cancion.html"
+        class="boton">
+        🎵 Llevar a nuestra canción
+    </a>
+
+</div>
+
+
+    <!-- VISOR -->
+
+    <div
+        id="visor"
+        class="visor">
+
+        <button
+            class="cerrar"
+            onclick="cerrarFoto()">
+            &times;
+        </button>
+
+
+        <button
+            class="anterior"
+            onclick="fotoAnterior()">
+            &#10094;
+        </button>
+
+
+        <div class="visor-contenido">
+
+            <img
+                id="imagenGrande"
+                src=""
+                alt="Foto ampliada">
+
+            <p id="contador"></p>
+
+        </div>
+
+
+        <button
+            class="siguiente"
+            onclick="fotoSiguiente()">
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const galeria =
+            document.getElementById("galeria-fotos");
+
+        const visor =
+            document.getElementById("visor");
+
+        const imagenGrande =
+            document.getElementById("imagenGrande");
+
+        const contador =
+            document.getElementById("contador");
+
+
+        /*
+         * AQUÍ ESTÁ EL CAMBIO IMPORTANTE
+         *
+         * Tenemos 60 fotos reales.
+         *
+         * La foto 43 fue eliminada,
+         * por eso la lista salta de 42 a 44.
+         */
+
+        const fotos = [];
+
+        for (let i = 1; i <= 61; i++) {
+
+            if (i === 43) {
+                continue;
+            }
+
+            fotos.push(i);
+
+        }
+
+
+        let fotoActual = 0;
+
+
+        /*
+         * CREAR LAS FOTOS DE LA GALERÍA
+         */
+
+        fotos.forEach((numeroFoto, indice) => {
+
+            const numero =
+                String(numeroFoto).padStart(2, "0");
+
+
+            const foto =
+                document.createElement("div");
+
+            foto.className = "foto";
+
+
+            foto.style.animationDelay =
+                (indice * 0.04) + "s";
+
+
+            foto.innerHTML = `
+
+                <img
+                    src="imagenes/foto${numero}.jpeg"
+                    alt="Nuestro recuerdo ${indice + 1}"
+                    onclick="abrirFoto(${indice})">
+
+                <p>
+                    ${obtenerMensaje(indice + 1)}
+                </p>
+
+            `;
+
+
+            galeria.appendChild(foto);
+
+        });
+
+
+        /*
+         * MENSAJES DE LAS FOTOS
+         */
+
+        function obtenerMensaje(numero) {
+
+            const mensajes = [
+
+                "Un recuerdo especial ❤️",
+
+                "Un día para recordar ✨",
+
+                "Un momento inolvidable 💕",
+
+                "Un recuerdo bonito 🌸",
+
+                "Juntos en un recuerdo ❤️",
+
+                "Momentos que quedan para siempre ✨",
+
+                "Una sonrisa para recordar 💗",
+
+                "Un momento muy especial 🌷"
+
+            ];
+
+
+            return mensajes[
+                (numero - 1) % mensajes.length
+            ];
+
+        }
+
+
+        /*
+         * ABRIR FOTO
+         */
+
+        function abrirFoto(indice) {
+
+            fotoActual = indice;
+
+            mostrarFoto();
+
+            visor.classList.add("activo");
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        /*
+         * MOSTRAR FOTO ACTUAL
+         */
+
+        function mostrarFoto() {
+
+            const numeroFoto =
+                fotos[fotoActual];
+
+
+            const numero =
+                String(numeroFoto).padStart(2, "0");
+
+
+            imagenGrande.src =
+                "imagenes/foto" +
+                numero +
+                ".jpeg";
+
+
+            contador.textContent =
+                (fotoActual + 1) +
+                " / " +
+                fotos.length;
+
+        }
+
+
+        /*
+         * SIGUIENTE FOTO
+         */
+
+        function fotoSiguiente() {
+
+            fotoActual++;
+
+
+            if (fotoActual >= fotos.length) {
+
+                fotoActual = 0;
+
+            }
+
+
+            mostrarFoto();
+
+        }
+
+
+        /*
+         * FOTO ANTERIOR
+         */
+
+        function fotoAnterior() {
+
+            fotoActual--;
+
+
+            if (fotoActual < 0) {
+
+                fotoActual =
+                    fotos.length - 1;
+
+            }
+
+
+            mostrarFoto();
+
+        }
+
+
+        /*
+         * CERRAR VISOR
+         */
+
+        function cerrarFoto() {
+
+            visor.classList.remove("activo");
+
+            document.body.style.overflow =
+                "auto";
+
+        }
+
+
+        /*
+         * TECLADO
+         *
+         * ← = anterior
+         * → = siguiente
+         * ESC = cerrar
+         */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    !visor.classList.contains("activo")
+                ) {
+                    return;
+                }
+
+
+                if (
+                    event.key === "ArrowRight"
+                ) {
+
+                    fotoSiguiente();
+
+                }
+
+
+                if (
+                    event.key === "ArrowLeft"
+                ) {
+
+                    fotoAnterior();
+
+                }
+
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    cerrarFoto();
+
+                }
+
+            }
+        );
+
+
+        /*
+         * CERRAR AL HACER CLIC
+         * FUERA DE LA FOTO
+         */
+
+        visor.addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target === visor) {
+
+                    cerrarFoto();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

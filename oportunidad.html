@@ -1,0 +1,1747 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Una oportunidad 💜</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #34205f 0%,
+                    #17152f 40%,
+                    #080b1c 85%
+                );
+
+            color: white;
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        /* =========================
+           LUCES DEL FONDO
+           ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -180px;
+            left: -180px;
+
+            background:
+                rgba(182,92,255,0.18);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            pointer-events: none;
+
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            bottom: -200px;
+            right: -180px;
+
+            background:
+                rgba(255,117,195,0.14);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================
+           CORAZONES DEL FONDO
+           ========================= */
+
+        .corazones {
+
+            position: fixed;
+
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 1;
+
+        }
+
+
+        .corazones span {
+
+            position: absolute;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            opacity: 0.3;
+
+            color: #f49bff;
+
+            animation:
+                flotar 10s linear infinite;
+
+            text-shadow:
+                0 0 10px rgba(244,155,255,0.8);
+
+        }
+
+
+        .corazones span:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+
+        .corazones span:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+
+        .corazones span:nth-child(3) {
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+
+        .corazones span:nth-child(4) {
+            left: 55%;
+            animation-delay: 1s;
+        }
+
+
+        .corazones span:nth-child(5) {
+            left: 70%;
+            animation-delay: 5s;
+        }
+
+
+        .corazones span:nth-child(6) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+
+        /* =========================
+           CONTENEDOR PRINCIPAL
+           ========================= */
+
+        .contenedor {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 90%;
+
+            max-width: 900px;
+
+            text-align: center;
+
+            padding: 55px 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(52,32,95,0.94),
+                    rgba(23,21,47,0.97)
+                );
+
+            border:
+                1px solid rgba(244,155,255,0.25);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.55),
+                0 0 40px rgba(182,92,255,0.15);
+
+        }
+
+
+        /* =========================
+           TITULO
+           ========================= */
+
+        .pequeno {
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            color: #f4eaff;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        h1 {
+
+            font-family: Georgia, serif;
+
+            font-size: 50px;
+
+            margin-bottom: 15px;
+
+            color: white;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.35),
+                0 0 25px rgba(244,155,255,0.55);
+
+        }
+
+
+        .linea {
+
+            width: 100px;
+
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff75c3,
+                    white,
+                    #b65cff
+                );
+
+            margin: 0 auto 30px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 0 15px rgba(255,117,195,0.7);
+
+        }
+
+
+        /* =========================
+           MENSAJE
+           ========================= */
+
+        .mensaje {
+
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+
+            line-height: 1.8;
+
+            color: #f4eaff;
+
+            max-width: 760px;
+
+            margin: 0 auto 25px;
+
+        }
+
+
+        .pregunta {
+
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            margin-top: 15px;
+
+            margin-bottom: 30px;
+
+            color: white;
+
+            text-shadow:
+                0 0 15px rgba(244,155,255,0.7);
+
+        }
+
+
+        /* =========================
+           OPCIONES
+           ========================= */
+
+        .opciones {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 35px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .opcion {
+
+            width: 230px;
+
+            min-height: 150px;
+
+            border-radius: 25px;
+
+            border:
+                2px solid rgba(255,255,255,0.25);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(52,32,95,0.9),
+                    rgba(23,21,47,0.95)
+                );
+
+            color: white;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+        }
+
+
+        .opcion:hover {
+
+            transform:
+                translateY(-8px)
+                scale(1.03);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.4),
+                0 0 30px rgba(182,92,255,0.35);
+
+        }
+
+
+        .simbolo {
+
+            font-size: 55px;
+
+            line-height: 1;
+
+        }
+
+
+        /* =========================
+           SÍ
+           ========================= */
+
+        .opcion.si:hover,
+        .opcion.si.seleccionada {
+
+            border-color: #55e878;
+
+            box-shadow:
+                0 0 20px rgba(85,232,120,0.5),
+                0 0 45px rgba(85,232,120,0.25);
+
+        }
+
+
+        .opcion.si.seleccionada {
+
+            transform:
+                scale(1.06);
+
+        }
+
+
+        .opcion.si .simbolo {
+
+            color: #55e878;
+
+            text-shadow:
+                0 0 15px rgba(85,232,120,0.7);
+
+        }
+
+
+        /* =========================
+           NO
+           ========================= */
+
+        .opcion.no:hover,
+        .opcion.no.seleccionada {
+
+            border-color: #ff5c7a;
+
+            box-shadow:
+                0 0 20px rgba(255,92,122,0.45),
+                0 0 45px rgba(255,92,122,0.20);
+
+        }
+
+
+        .opcion.no.seleccionada {
+
+            transform:
+                scale(1.06);
+
+        }
+
+
+        .opcion.no .simbolo {
+
+            color: #ff5c7a;
+
+            text-shadow:
+                0 0 15px rgba(255,92,122,0.7);
+
+        }
+
+
+        /* =========================
+           BOTON VOLVER
+           ========================= */
+
+        .volver {
+
+            margin-top: 35px;
+
+        }
+
+
+        .boton {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff75c3,
+                    #b65cff
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            border:
+                1px solid rgba(255,255,255,0.30);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.30),
+                0 0 15px rgba(255,117,195,0.25);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .boton:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.40),
+                0 0 25px rgba(255,117,195,0.50);
+
+        }
+
+
+        /* =========================
+           CAPA DE CELEBRACION
+           ========================= */
+
+        .celebracion {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 20;
+
+        }
+
+
+        /* =========================
+           BRILLO DE SÍ
+           ========================= */
+
+        .brillo-celebracion {
+
+            position: fixed;
+
+            left: 50%;
+
+            top: 50%;
+
+            width: 20px;
+
+            height: 20px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0);
+
+            opacity: 0;
+
+            box-shadow:
+                0 0 20px white,
+                0 0 60px #55e878,
+                0 0 120px #b65cff;
+
+        }
+
+
+        .brillo-celebracion.activo {
+
+            animation:
+                explosionBrillo 1.4s ease-out forwards;
+
+        }
+
+
+        @keyframes explosionBrillo {
+
+            0% {
+
+                opacity: 0.9;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0);
+
+            }
+
+            40% {
+
+                opacity: 0.8;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(8);
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(25);
+
+            }
+
+        }
+
+
+        /* =========================
+           CONFETI
+           ========================= */
+
+        .confeti {
+
+            position: absolute;
+
+            top: -30px;
+
+            width: 9px;
+
+            height: 18px;
+
+            border-radius: 3px;
+
+            animation:
+                caerConfeti 3.5s linear forwards;
+
+        }
+
+
+        @keyframes caerConfeti {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(115vh)
+                    rotate(720deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =========================
+           CORAZONES DE SÍ
+           ========================= */
+
+        .corazon-celebracion {
+
+            position: fixed;
+
+            left: 50%;
+
+            top: 50%;
+
+            font-size: 30px;
+
+            opacity: 0;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0);
+
+            animation:
+                explotarCorazon 2.5s ease-out forwards;
+
+        }
+
+
+        @keyframes explotarCorazon {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0);
+
+            }
+
+            15% {
+
+                opacity: 1;
+
+                transform:
+                    translate(
+                        calc(-50% + var(--x) * 0.15),
+                        calc(-50% + var(--y) * 0.15)
+                    )
+                    scale(1.2);
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        calc(-50% + var(--x)),
+                        calc(-50% + var(--y))
+                    )
+                    scale(0.6)
+                    rotate(180deg);
+
+            }
+
+        }
+
+
+        /* =========================
+           MENSAJE VERDE DE SÍ
+           ========================= */
+
+        .mensaje-celebracion {
+
+            position: fixed;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.5);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            width: min(90%, 520px);
+
+            padding: 30px 25px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(35,75,48,0.97),
+                    rgba(17,45,30,0.99)
+                );
+
+            border:
+                2px solid rgba(85,232,120,0.75);
+
+            box-shadow:
+                0 0 30px rgba(85,232,120,0.35),
+                0 0 70px rgba(85,232,120,0.20),
+                0 20px 50px rgba(0,0,0,0.5);
+
+            text-align: center;
+
+            z-index: 30;
+
+        }
+
+
+        .mensaje-celebracion .grande {
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 15px rgba(85,232,120,0.8);
+
+        }
+
+
+        .mensaje-celebracion .texto {
+
+            font-family: Georgia, serif;
+
+            font-size: 24px;
+
+            line-height: 1.5;
+
+            color: white;
+
+        }
+
+
+        /* =========================
+           MENSAJE TRISTE DE NO
+           ========================= */
+
+        .mensaje-no {
+
+            position: fixed;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.5);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            width: min(90%, 520px);
+
+            padding: 30px 25px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(70,35,55,0.98),
+                    rgba(30,20,38,0.99)
+                );
+
+            border:
+                2px solid rgba(255,92,122,0.65);
+
+            box-shadow:
+                0 0 30px rgba(255,92,122,0.25),
+                0 0 70px rgba(182,92,255,0.15),
+                0 20px 50px rgba(0,0,0,0.5);
+
+            text-align: center;
+
+            z-index: 30;
+
+        }
+
+
+        .mensaje-no .grande {
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 15px rgba(255,92,122,0.7);
+
+        }
+
+
+        .mensaje-no .texto {
+
+            font-family: Georgia, serif;
+
+            font-size: 23px;
+
+            line-height: 1.6;
+
+            color: #f4eaff;
+
+        }
+
+
+        /* =========================
+           ANIMACIONES DE LOS MENSAJES
+           ========================= */
+
+        @keyframes aparecerCelebracion {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.5);
+
+            }
+
+            60% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.08);
+
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+
+            }
+
+        }
+
+
+        @keyframes aparecerNo {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.5)
+                    translateY(20px);
+
+            }
+
+            60% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.05)
+                    translateY(0);
+
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1)
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================
+           CORAZON ROTO PARA NO
+           ========================= */
+
+        .corazon-triste {
+
+            position: fixed;
+
+            left: 50%;
+
+            top: 50%;
+
+            font-size: 55px;
+
+            opacity: 0;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.4);
+
+            z-index: 25;
+
+            pointer-events: none;
+
+        }
+
+
+        .corazon-triste.activo {
+
+            animation:
+                aparecerTriste 1.5s ease forwards;
+
+        }
+
+
+        @keyframes aparecerTriste {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.4);
+
+            }
+
+            45% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.2);
+
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        -50%,
+                        calc(-50% - 100px)
+                    )
+                    scale(0.8);
+
+            }
+
+        }
+
+
+        /* =========================
+           ANIMACION FLOTAR
+           ========================= */
+
+        @keyframes flotar {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+            }
+
+        }
+
+
+        /* =========================
+           MOVIL
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+
+                overflow-y: auto;
+
+                align-items: flex-start;
+
+                padding: 30px 0;
+
+            }
+
+
+            .contenedor {
+
+                width: 94%;
+
+                padding: 40px 18px;
+
+            }
+
+
+            h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .mensaje {
+
+                font-size: 18px;
+
+                line-height: 1.7;
+
+            }
+
+
+            .pregunta {
+
+                font-size: 25px;
+
+            }
+
+
+            .opciones {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 20px;
+
+            }
+
+
+            .opcion {
+
+                width: 90%;
+
+                max-width: 280px;
+
+                min-height: 130px;
+
+            }
+
+
+            .volver {
+
+                margin-top: 25px;
+
+            }
+
+
+            .mensaje-celebracion,
+            .mensaje-no {
+
+                width: 88%;
+
+                padding: 25px 18px;
+
+            }
+
+
+            .mensaje-celebracion .grande,
+            .mensaje-no .grande {
+
+                font-size: 38px;
+
+            }
+
+
+            .mensaje-celebracion .texto,
+            .mensaje-no .texto {
+
+                font-size: 19px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CORAZONES DEL FONDO
+         ========================= -->
+
+    <div class="corazones">
+
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+
+    </div>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+         ========================= -->
+
+    <main class="contenedor">
+
+
+        <div class="pequeno">
+
+            UNA NUEVA OPORTUNIDAD
+
+        </div>
+
+
+        <h1>
+
+            💜 Una oportunidad 💜
+
+        </h1>
+
+
+        <div class="linea"></div>
+
+
+        <p class="mensaje">
+
+            MI PRINCESA HERMOSA, YO YA NO SOY EL MISMO
+            NIÑO QUE LE CAUSÓ DAÑO, SOY DISTINTO,
+            Y QUIERO DEMOSTRÁRSELO.
+
+            <br><br>
+
+            QUIERO ESTAR CON USTED DE NUEVO,
+            QUIERO QUE USTED VUELVA A SER MI PRINCESA.
+
+            <br><br>
+
+            ¿PUEDE DARME OTRA OPORTUNIDAD?
+
+            <br>
+
+            ¿PODEMOS SER MONKEY NOVIOS DE NUEVO?
+
+        </p>
+
+
+        <div class="pregunta">
+
+            ¿Qué dice usted? 💜
+
+        </div>
+
+
+        <!-- =========================
+             OPCIONES
+             ========================= -->
+
+        <div class="opciones">
+
+
+            <button
+                class="opcion si"
+                onclick="seleccionar(this)">
+
+                <span class="simbolo">
+                    ✓
+                </span>
+
+                <span>
+                    SÍ
+                </span>
+
+            </button>
+
+
+            <button
+                class="opcion no"
+                onclick="seleccionar(this)">
+
+                <span class="simbolo">
+                    ✕
+                </span>
+
+                <span>
+                    NO
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =========================
+             BOTON VOLVER
+             ========================= -->
+
+        <div class="volver">
+
+            <a
+                href="cancion.html"
+                class="boton">
+
+                ← Volver a nuestra canción
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================
+         CELEBRACION DE SÍ
+         ========================= -->
+
+    <div
+        id="celebracion"
+        class="celebracion">
+    </div>
+
+
+    <div
+        id="brilloCelebracion"
+        class="brillo-celebracion">
+    </div>
+
+
+    <!-- MENSAJE VERDE -->
+
+    <div
+        id="mensajeCelebracion"
+        class="mensaje-celebracion">
+
+        <div class="grande">
+
+            💚 ¡SÍ! 💚
+
+        </div>
+
+        <div class="texto">
+
+            ✨🥰✨
+
+            <br>
+
+            ¡Entonces comienza una nueva historia!
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MENSAJE DE NO
+         ========================= -->
+
+    <div
+        id="mensajeNo"
+        class="mensaje-no">
+
+        <div class="grande">
+
+            💔 😔
+
+        </div>
+
+        <div class="texto">
+
+            Está bien...
+
+            <br>
+
+            Gracias por ser sincera. 💜
+
+        </div>
+
+    </div>
+
+
+    <!-- CORAZON TRISTE -->
+
+    <div
+        id="corazonTriste"
+        class="corazon-triste">
+
+        💔
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+
+        function seleccionar(opcion) {
+
+
+            const opciones =
+                document.querySelectorAll(".opcion");
+
+
+            const mensajeSi =
+                document.getElementById(
+                    "mensajeCelebracion"
+                );
+
+
+            const mensajeNo =
+                document.getElementById(
+                    "mensajeNo"
+                );
+
+
+            const corazonTriste =
+                document.getElementById(
+                    "corazonTriste"
+                );
+
+
+            opciones.forEach(function(elemento) {
+
+                elemento.classList.remove(
+                    "seleccionada"
+                );
+
+            });
+
+
+            opcion.classList.add(
+                "seleccionada"
+            );
+
+
+            /* =========================
+               SI
+               ========================= */
+
+            if (
+                opcion.classList.contains("si")
+            ) {
+
+
+                /* Ocultar NO */
+
+                mensajeNo.style.opacity = "0";
+
+                mensajeNo.style.animation =
+                    "none";
+
+
+                /* Celebrar */
+
+                celebrar();
+
+
+                /* Mostrar mensaje verde */
+
+                mensajeSi.style.animation =
+                    "none";
+
+
+                void mensajeSi.offsetWidth;
+
+
+                mensajeSi.style.animation =
+                    "aparecerCelebracion 2.5s ease forwards";
+
+
+            }
+
+
+            /* =========================
+               NO
+               ========================= */
+
+            else {
+
+
+                /* Ocultar mensaje verde */
+
+                mensajeSi.style.opacity = "0";
+
+                mensajeSi.style.animation =
+                    "none";
+
+
+                /* Limpiar celebración */
+
+                limpiarCelebracion();
+
+
+                /* Corazón triste */
+
+                corazonTriste.classList.remove(
+                    "activo"
+                );
+
+
+                void corazonTriste.offsetWidth;
+
+
+                corazonTriste.classList.add(
+                    "activo"
+                );
+
+
+                /* Mostrar mensaje triste */
+
+                mensajeNo.style.animation =
+                    "none";
+
+
+                void mensajeNo.offsetWidth;
+
+
+                mensajeNo.style.animation =
+                    "aparecerNo 1.2s ease forwards";
+
+
+            }
+
+        }
+
+
+
+        /* =========================
+           CELEBRACION
+           ========================= */
+
+        function celebrar() {
+
+
+            const contenedor =
+                document.getElementById(
+                    "celebracion"
+                );
+
+
+            const brillo =
+                document.getElementById(
+                    "brilloCelebracion"
+                );
+
+
+            /* Limpiar celebración anterior */
+
+            contenedor.innerHTML = "";
+
+
+            /* Brillo */
+
+            brillo.classList.remove(
+                "activo"
+            );
+
+
+            void brillo.offsetWidth;
+
+
+            brillo.classList.add(
+                "activo"
+            );
+
+
+            /* =========================
+               CONFETI
+               ========================= */
+
+            for (
+                let i = 0;
+                i < 100;
+                i++
+            ) {
+
+
+                const confeti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confeti.classList.add(
+                    "confeti"
+                );
+
+
+                confeti.style.left =
+                    Math.random() * 100 + "%";
+
+
+                confeti.style.background = [
+
+                    "#ff75c3",
+                    "#b65cff",
+                    "#f49bff",
+                    "#ffffff",
+                    "#55e878"
+
+                ][
+                    Math.floor(
+                        Math.random() * 5
+                    )
+                ];
+
+
+                confeti.style.animationDelay =
+                    Math.random() * 1.2 + "s";
+
+
+                confeti.style.width =
+                    5 +
+                    Math.random() * 8 +
+                    "px";
+
+
+                confeti.style.height =
+                    10 +
+                    Math.random() * 15 +
+                    "px";
+
+
+                confeti.style.transform =
+                    "rotate(" +
+                    Math.random() * 360 +
+                    "deg)";
+
+
+                contenedor.appendChild(
+                    confeti
+                );
+
+            }
+
+
+            /* =========================
+               CORAZONES
+               ========================= */
+
+            const simbolos = [
+
+                "❤️",
+                "💜",
+                "💗",
+                "✨",
+                "💚",
+                "♡"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 30;
+                i++
+            ) {
+
+
+                const corazon =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                corazon.classList.add(
+                    "corazon-celebracion"
+                );
+
+
+                corazon.innerHTML =
+                    simbolos[
+                        Math.floor(
+                            Math.random() *
+                            simbolos.length
+                        )
+                    ];
+
+
+                const x =
+                    (Math.random() - 0.5)
+                    * 900;
+
+
+                const y =
+                    (Math.random() - 0.5)
+                    * 650;
+
+
+                corazon.style.setProperty(
+                    "--x",
+                    x + "px"
+                );
+
+
+                corazon.style.setProperty(
+                    "--y",
+                    y + "px"
+                );
+
+
+                corazon.style.animationDelay =
+                    Math.random() * 0.5 +
+                    "s";
+
+
+                contenedor.appendChild(
+                    corazon
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           LIMPIAR CELEBRACION
+           ========================= */
+
+        function limpiarCelebracion() {
+
+
+            const contenedor =
+                document.getElementById(
+                    "celebracion"
+                );
+
+
+            const brillo =
+                document.getElementById(
+                    "brilloCelebracion"
+                );
+
+
+            contenedor.innerHTML = "";
+
+
+            brillo.classList.remove(
+                "activo"
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

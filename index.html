@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <script>
+    if (sessionStorage.getItem("acceso") !== "permitido") {
+        window.location.href = "login.html";
+    }
+</script>
+    
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <style>
+
+        /* ==============================
+           CONFIGURACIÓN GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+       
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 11, 28, 0.45),
+            rgba(8, 11, 28, 0.45)
+        ),
+        url("imagenes/portada.jpg");
+
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #080b1c;
+    
+
+    color: white;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position: relative;
+}
+
+
+
+        /* ==============================
+           LUCES DEL FONDO
+        ============================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background: rgba(180, 100, 255, 0.18);
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            pointer-events: none;
+        }
+
+
+        /* ==============================
+           CONTENEDOR PRINCIPAL
+        ============================== */
+
+        .pagina {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 50px 20px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .contenido {
+            width: min(100%, 1100px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 70px;
+
+            animation: aparecer 1.5s ease;
+        }
+
+
+        /* ==============================
+           PARTE DEL TEXTO
+        ============================== */
+
+        .texto {
+    width: 50%;
+    text-align: center;
+
+    transform: translateX(-175px);
+}
+
+
+        .pequeno {
+            font-size: 17px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+
+            opacity: 0.85;
+
+            text-transform: uppercase;
+        }
+
+
+        h1 {
+            font-size: clamp(48px, 6vw, 78px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.4),
+                0 0 25px rgba(220,120,255,0.6);
+        }
+
+
+        h1 span {
+            color: #f49bff;
+        }
+
+
+        .descripcion {
+            font-size: clamp(17px, 2vw, 21px);
+
+            line-height: 1.7;
+
+            max-width: 550px;
+
+            margin: 0 auto 30px;
+
+            color: #f4eaff;
+        }
+
+
+        /* ==============================
+           BOTÓN
+        ============================== */
+
+        .boton {
+            display: inline-block;
+
+            padding: 16px 32px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff75c3,
+                    #b65cff
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 0 15px rgba(255,100,220,0.5),
+                0 8px 25px rgba(0,0,0,0.3);
+
+            transition: 0.35s;
+
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+
+        .boton:hover {
+            transform: translateY(-5px) scale(1.05);
+
+            box-shadow:
+                0 0 30px rgba(255,120,230,0.8),
+                0 12px 30px rgba(0,0,0,0.4);
+        }
+
+
+        .boton:active {
+            transform: scale(0.96);
+        }
+
+
+        /* ==============================
+           PUERTA MÁGICA
+        ============================== */
+
+        .zona-puerta {
+             width: 400px;
+             height: 550px;
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+
+                transform: translateX(275px);
+            }
+
+
+        /* Luz detrás de la puerta */
+
+        .luz-puerta {
+            position: absolute;
+
+            width: 280px;
+            height: 500px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,170,245,0.1),
+                    rgba(255,220,255,0.8),
+                    rgba(255,170,245,0.1)
+                );
+
+            filter: blur(35px);
+
+            opacity: 0.7;
+
+            animation: luz 3s ease-in-out infinite alternate;
+        }
+
+
+        /* Marco */
+
+        .marco {
+            width: 270px;
+            height: 480px;
+
+            background: #18122e;
+
+            border: 18px solid #3a2b62;
+
+            border-radius: 135px 135px 15px 15px;
+
+            position: relative;
+
+            box-shadow:
+                0 0 0 6px #241a45,
+                0 0 35px rgba(210,130,255,0.6),
+                0 25px 60px rgba(0,0,0,0.6);
+
+            z-index: 2;
+
+            padding: 10px;
+        }
+
+
+        /* La puerta */
+
+        .puerta {
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #70529c,
+                    #403267
+                );
+
+            border-radius: 115px 115px 5px 5px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.4);
+
+            transition: 0.5s;
+        }
+
+
+        /* Decoración de la puerta */
+
+        .puerta::before {
+            content: "🌸";
+
+            position: absolute;
+
+            top: 50px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 55px;
+
+            filter:
+                drop-shadow(0 0 10px rgba(255,150,255,0.8));
+        }
+
+
+        .puerta::after {
+            content: "💕";
+
+            position: absolute;
+
+            bottom: 70px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 35px;
+        }
+
+
+        /* Paneles */
+
+        .panel {
+            position: absolute;
+
+            left: 35px;
+            right: 35px;
+
+            height: 110px;
+
+            border: 3px solid rgba(255,255,255,0.15);
+
+            border-radius: 10px;
+        }
+
+
+        .panel.arriba {
+            top: 140px;
+        }
+
+
+        .panel.abajo {
+            bottom: 90px;
+        }
+
+
+        /* Perilla */
+
+        .perilla {
+            position: absolute;
+
+            right: 27px;
+            top: 50%;
+
+            width: 18px;
+            height: 18px;
+
+            border-radius: 50%;
+
+            background: #f7d77c;
+
+            box-shadow:
+                0 0 10px rgba(255,220,100,0.8);
+        }
+
+
+        /* Corazón sobre la puerta */
+
+        .corazon-puerta {
+            position: absolute;
+
+            bottom: 15px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 25px;
+        }
+
+
+        /* ==============================
+           EFECTO AL PASAR SOBRE LA PUERTA
+        ============================== */
+
+        .marco:hover .puerta {
+            transform: scale(1.02);
+
+            filter: brightness(1.15);
+        }
+
+
+        .marco:hover {
+            box-shadow:
+                0 0 0 6px #241a45,
+                0 0 60px rgba(255,150,255,0.9),
+                0 25px 60px rgba(0,0,0,0.6);
+        }
+
+
+        /* ==============================
+           CORAZONES FLOTANTES
+        ============================== */
+
+        .corazones {
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .corazones span {
+            position: absolute;
+
+            bottom: -60px;
+
+            opacity: 0;
+
+            font-size: 25px;
+
+            animation: flotar linear infinite;
+        }
+
+
+        .corazones span:nth-child(1) {
+            left: 8%;
+            animation-duration: 9s;
+        }
+
+
+        .corazones span:nth-child(2) {
+            left: 20%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+
+
+        .corazones span:nth-child(3) {
+            left: 35%;
+            animation-duration: 8s;
+            animation-delay: 4s;
+        }
+
+
+        .corazones span:nth-child(4) {
+            left: 60%;
+            animation-duration: 11s;
+            animation-delay: 1s;
+        }
+
+
+        .corazones span:nth-child(5) {
+            left: 78%;
+            animation-duration: 9s;
+            animation-delay: 3s;
+        }
+
+
+        .corazones span:nth-child(6) {
+            left: 90%;
+            animation-duration: 13s;
+            animation-delay: 5s;
+        }
+
+
+        /* ==============================
+           ANIMACIONES
+        ============================== */
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes flotar {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.7;
+            }
+
+            90% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(25deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        @keyframes luz {
+
+            from {
+                opacity: 0.45;
+
+                transform:
+                    scale(0.95);
+            }
+
+            to {
+                opacity: 0.9;
+
+                transform:
+                    scale(1.08);
+            }
+        }
+
+
+        /* ==============================
+           CELULARES
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            .pagina {
+                padding: 40px 18px;
+            }
+
+
+            .contenido {
+                flex-direction: column;
+
+                gap: 35px;
+            }
+
+
+            .texto {
+                width: 100%;
+            }
+
+
+            .zona-puerta {
+                width: min(90vw, 330px);
+
+                height: 430px;
+            }
+
+
+            .marco {
+                width: 220px;
+
+                height: 380px;
+
+                border-width: 14px;
+
+                border-radius:
+                    110px 110px 12px 12px;
+            }
+
+
+            .panel {
+                left: 28px;
+                right: 28px;
+
+                height: 85px;
+            }
+
+
+            .panel.arriba {
+                top: 105px;
+            }
+
+
+            .panel.abajo {
+                bottom: 65px;
+            }
+
+
+            .puerta::before {
+                top: 35px;
+
+                font-size: 42px;
+            }
+
+
+            .puerta::after {
+                bottom: 45px;
+
+                font-size: 28px;
+            }
+
+
+            .descripcion {
+                max-width: 500px;
+            }
+
+
+            .boton {
+                width: min(100%, 330px);
+            }
+        }
+
+
+        /* ==============================
+           CELULARES PEQUEÑOS
+        ============================== */
+
+        @media (max-width: 400px) {
+
+            .pagina {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+
+            .pequeno {
+                font-size: 13px;
+
+                letter-spacing: 2px;
+            }
+
+
+            h1 {
+                font-size: 43px;
+            }
+
+
+            .descripcion {
+                font-size: 16px;
+
+                line-height: 1.6;
+            }
+
+
+            .zona-puerta {
+                height: 360px;
+            }
+
+
+            .marco {
+                width: 185px;
+
+                height: 320px;
+
+                border-width: 12px;
+            }
+
+
+            .panel {
+                left: 22px;
+                right: 22px;
+
+                height: 70px;
+            }
+
+
+            .panel.arriba {
+                top: 85px;
+            }
+
+
+            .panel.abajo {
+                bottom: 50px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+
+    <!-- =================================
+         CORAZONES
+    ================================== -->
+
+    <div class="corazones">
+
+        <span>💜</span>
+        <span>💗</span>
+        <span>💕</span>
+        <span>💙</span>
+        <span>💖</span>
+        <span>💜</span>
+
+    </div>
+
+
+    <!-- =================================
+         PÁGINA
+    ================================== -->
+
+    <main class="pagina">
+
+        <div class="contenido">
+
+
+            <!-- ==========================
+                 TEXTO
+            =========================== -->
+
+            <section class="texto">
+
+                <div class="pequeno">
+                    ✨ Una historia para recordar ✨
+                </div>
+
+
+                <h1>
+                    Nuestra<br>
+                    <span>Historia</span> ❤️
+                </h1>
+
+
+                <p class="descripcion">
+
+                    Dos personas, muchos recuerdos<br>
+
+                    y una historia que tuvo un inicio<br>
+
+                    pero que también ya tuvo un fin...
+
+                </p>
+
+
+                <a href="historia.html" class="boton">
+
+                    🚪 Comenzar nuestra historia ❤️
+
+                </a>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 PUERTA
+            =========================== -->
+
+            <section class="zona-puerta">
+
+                <div class="luz-puerta"></div>
+
+
+                <div class="marco">
+
+                    <div class="puerta">
+
+                        <div class="panel arriba"></div>
+
+                        <div class="panel abajo"></div>
+
+                        <div class="perilla"></div>
+
+                        <div class="corazon-puerta">
+                            ❤️
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+</html>

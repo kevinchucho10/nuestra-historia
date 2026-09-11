@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una pequeña puerta 💜</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Segoe UI", sans-serif;
+            color: white;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at top left, #34205f 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #6d3b91 0%, transparent 35%),
+                #080b1c;
+        }
+
+        /* Luces de fondo */
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        body::before {
+            background: #b65cff;
+            top: -100px;
+            left: -80px;
+        }
+
+        body::after {
+            background: #ff75c3;
+            bottom: -120px;
+            right: -80px;
+        }
+
+        /* Corazones */
+
+        .corazon {
+            position: fixed;
+            color: #ff75c3;
+            font-size: 20px;
+            opacity: 0.5;
+            animation: flotar 7s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .c1 {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .c2 {
+            right: 12%;
+            top: 25%;
+            animation-delay: 2s;
+        }
+
+        .c3 {
+            left: 18%;
+            bottom: 15%;
+            animation-delay: 4s;
+        }
+
+        .c4 {
+            right: 20%;
+            bottom: 18%;
+            animation-delay: 1s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(8deg);
+            }
+        }
+
+        /* Contenedor */
+
+        .login-container {
+            width: 90%;
+            max-width: 430px;
+            padding: 45px 35px;
+
+            background: rgba(23, 21, 47, 0.92);
+            border: 1px solid rgba(182, 92, 255, 0.55);
+            border-radius: 25px;
+
+            box-shadow:
+                0 0 25px rgba(182, 92, 255, 0.25),
+                0 0 70px rgba(255, 117, 195, 0.12);
+
+            text-align: center;
+            position: relative;
+            z-index: 2;
+
+            animation: aparecer 1.2s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Título */
+
+        .corazon-grande {
+            font-size: 55px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 12px #ff75c3);
+            animation: latido 2s infinite;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+
+            background: linear-gradient(
+                90deg,
+                #f49bff,
+                #ff75c3,
+                #b65cff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitulo {
+            color: #ddd1ee;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Campos */
+
+        .campo {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f49bff;
+            font-size: 14px;
+        }
+
+        .campo input {
+            width: 100%;
+            padding: 14px 16px;
+
+            border: 1px solid rgba(182, 92, 255, 0.45);
+            border-radius: 12px;
+
+            background: rgba(8, 11, 28, 0.75);
+            color: white;
+
+            outline: none;
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        .campo input:focus {
+            border-color: #ff75c3;
+
+            box-shadow:
+                0 0 12px rgba(255, 117, 195, 0.35);
+
+            transform: translateY(-1px);
+        }
+
+        .campo input::placeholder {
+            color: #8f86a3;
+        }
+
+        /* Botón */
+
+        .boton {
+            width: 100%;
+            padding: 15px;
+            margin-top: 8px;
+
+            border: none;
+            border-radius: 30px;
+
+            background: linear-gradient(
+                90deg,
+                #6d3b91,
+                #b65cff,
+                #ff75c3
+            );
+
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 18px rgba(182, 92, 255, 0.35);
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px) scale(1.02);
+
+            box-shadow:
+                0 0 25px rgba(255, 117, 195, 0.55);
+        }
+
+        .boton:active {
+            transform: scale(0.98);
+        }
+
+        /* Mensaje de error */
+
+        .error {
+            min-height: 24px;
+            margin-top: 18px;
+
+            color: #ff9bcf;
+            font-size: 14px;
+
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .error.mostrar {
+            opacity: 1;
+        }
+
+        /* Texto inferior */
+
+        .nota {
+            margin-top: 20px;
+            color: #8f86a3;
+            font-size: 12px;
+        }
+
+        @media (max-width: 500px) {
+
+            .login-container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .corazon-grande {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Corazones decorativos -->
+
+    <div class="corazon c1">💜</div>
+    <div class="corazon c2">💕</div>
+    <div class="corazon c3">💗</div>
+    <div class="corazon c4">💜</div>
+
+
+    <div class="login-container">
+
+        <div class="corazon-grande">💜</div>
+
+        <h1>Una pequeña puerta...</h1>
+
+        <p class="subtitulo">
+            Antes de entrar a nuestra historia,
+            hay dos pequeñas cosas que debe colocar antes de entrar. ✨
+        </p>
+
+
+        <div class="campo">
+
+            <label for="nombre">
+                💜 Su nombre
+            </label>
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escriba su nombre"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <div class="campo">
+
+            <label for="apodo">
+                💕 El apodo que más le decia
+            </label>
+
+            <input
+                type="password"
+                id="apodo"
+                placeholder="Escriba el apodo"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <button class="boton" onclick="entrar()">
+            💗 Entrar a nuestra historia
+        </button>
+
+
+        <p id="error" class="error">
+            El nombre o el apodo no son correctos. 💜
+        </p>
+
+
+        <p class="nota">
+            Algunas historias tienen una pequeña puerta antes de comenzar...
+        </p>
+
+    </div>
+
+
+    <script>
+
+        function entrar() {
+
+            /*
+             * AQUÍ pondremos posteriormente
+             * el nombre y el apodo correctos.
+             */
+
+            const nombreCorrecto = "allison";
+            const apodoCorrecto = "princesa";
+
+
+            const nombre = document
+                .getElementById("nombre")
+                .value
+                .trim()
+                .toLowerCase();
+
+            const apodo = document
+                .getElementById("apodo")
+                .value
+                .trim()
+                .toLowerCase();
+
+            const error = document.getElementById("error");
+
+
+           if (
+                    nombre === nombreCorrecto.toLowerCase() &&
+                    apodo === apodoCorrecto.toLowerCase()
+                ) {
+
+                    error.classList.remove("mostrar");
+
+                    // Crear sesión de acceso
+                    sessionStorage.setItem("acceso", "permitido");
+
+                    // Transición
+                    document.body.style.transition = "1s";
+                    document.body.style.opacity = "0";
+
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 1000);
+
+                
+
+            } else {
+
+                error.classList.remove("mostrar");
+
+                void error.offsetWidth;
+
+                error.classList.add("mostrar");
+
+            }
+        }
+
+
+        /* Permitir presionar ENTER */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+                entrar();
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
